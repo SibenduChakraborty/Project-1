@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type ="text/css" href="style.css">
+    <title>Parallax website</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Student</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#" >About</a></li>
+            <li><a href="#" >Project</a></li>
+            <li><a href="#" >Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" id="stars" alt="">
+        <img src="moon.png" id="moon">
+        <h3 id="holo">Sibendu Chakraborty </h3>
+        <a href="#sec" id="btn">View</a>
+        <img src="mountains_behind.png" id="mb" alt="">
+        <img src="mountains_front.png" id="mf" alt="">
+    </section>
+    <div class="sec" id="sec">
+        
+        <div class="port">
+            <div class="container">
+                <header>
+                  <h1>Sibendu Sakhar Chakraborty</h1>
+                  <div class="essential">
+                    <p>Phone No.<span class="ess-info">6289717371</span></p>
+                    <p>Email ID:<span class="ess-info">sibenduchakrobarty@gmail.com</span></p>
+                    <p>Location:<span class="ess-info">Kolkata,India</span></p>
+                  </div>
+                </header>
+                <div class="info-container">
+                  <div class="info">
+                    <h5>Date Of Birth</h5>
+                    <p>02/12/2000</p>
+                  </div>
+                  <div class="info">
+                    <h5>B.Tech CSE</h5>
+                    <p>Techno India University [2019-2023]</p>
+                  </div>
+                  <div class="info">
+                    <h5>Class XII</h5>
+                    <p>Ramakrishna Vivekananda Mission [2017-2019]</p>
+                  </div>
+                  <div class="info">
+                    <h5>Class X</h5>
+                    <p>Ramakrishna Vivekananda Mission [2015-2017]</p>
+                  </div>
+                  <div class="skills-container">
+                    <div class="skill">
+                      <h5>Languages</h5>
+                      <ul>
+                        <li>English</li>
+                        <li>Bengali</li>
+                        <li>Hindi</li>
+                      </ul>
+                    </div>
+                    <div class="skill">
+                      <h5>Hobbies</h5>
+                      <ul>
+                        <li>3D Graphics Designing</li>
+                        <li>Photography</li>
+                        <li>Video editing</li>
+                        <li>Gaming</li>
+                        <li>Pencil Sketching</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+        </div>
+    </div>
+    <script>
+        let moon = document.getElementById('moon');
+        let stars = document.getElementById('stars');
+        let backmountain = document.getElementById('mb');
+        let frontmountain = document.getElementById('mf');
+        let holo= document.getElementById('holo');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector ('header');
+
+        window.addEventListener('scroll' ,function(){
+            // let toppu = header.style
+            
+            
+            let value = window.scrollY;
+            console.log(value);
+            if (value < 1200) {
+                stars.style.left = value *.25 + 'px';
+                moon.style.top = value *1.1 + 'px';
+                backmountain.style.top = value *0.6 + 'px';
+                frontmountain.style.top= value *0 + 'px';
+                holo.style.marginRight = value*2 +'px';
+                holo.style.marginTop = value*.7 +'px';
+                btn.style.marginTop = value*.7 +'px';
+                header.style.top = value*.8+'px';
+            }
+        })
+    </script>
+</body>
+</html>
